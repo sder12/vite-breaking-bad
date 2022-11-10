@@ -1,8 +1,13 @@
 <script>
+// import vue file
 import AppHeader from './components/AppHeader.vue';
+import AppSelect from './components/AppSelect.vue';
+import AppCharacters from './components/AppCharacters.vue';
 export default {
   components: {
-    AppHeader
+    AppHeader,
+    AppSelect,
+    AppCharacters
   }
 }
 </script>
@@ -13,12 +18,8 @@ export default {
     <AppHeader />
     <!-- Main -->
     <main class="wrapper">
-      <section>
-        <h4>Select Category</h4>
-      </section>
-      <section>
-        <h3>Found 62 cards</h3>
-      </section>
+      <AppSelect />
+      <AppCharacters />
     </main>
   </div>
 </template>
