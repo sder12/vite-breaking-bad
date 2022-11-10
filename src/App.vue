@@ -1,4 +1,5 @@
 <script>
+import axios from "axios";
 // import vue file
 import AppHeader from './components/AppHeader.vue';
 import AppSelect from './components/AppSelect.vue';
@@ -8,6 +9,10 @@ export default {
     AppHeader,
     AppSelect,
     AppCharacters
+  },
+  created() {
+    axios.get("https://www.breakingbadapi.com/api/characters")
+      .then((resp) => console.log(resp))
   }
 }
 </script>
