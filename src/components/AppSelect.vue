@@ -14,7 +14,7 @@ export default {
 
 <style lang="scss" scoped>
 .select {
-    padding: 1em 1em;
+    padding: 0em 1em 2em;
 
     button {
         padding: .5em 2em;

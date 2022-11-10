@@ -1,6 +1,10 @@
 <script>
+import CharacterCard from './CharacterCard.vue';
 export default {
     name: "AppCharacters",
+    components: {
+        CharacterCard,
+    }
 }
 </script>
 
@@ -10,9 +14,12 @@ export default {
             <span> Found 62 characters </span>
         </section>
         <section class="characters-list">
-            <div class="characters-card">
-                <!-- insert Card -->
-            </div>
+            <!-- insert Card -->
+            <CharacterCard />
+            <CharacterCard />
+            <CharacterCard />
+            <CharacterCard />
+            <CharacterCard />
         </section>
     </div>
 </template>
@@ -31,16 +38,11 @@ export default {
     }
 
     .characters-list {
+        padding: 2em 1em;
         @include flex(row, space-around, center);
-        margin-top: 1em;
-        padding: 1em 1em;
+        gap: 1em;
         //DEBUG
-        height: 300px;
-        border: 1px solid red;
+        // height: 300px;
     }
-}
-
-.characters-card {
-    background-color: $bg-color;
 }
 </style>

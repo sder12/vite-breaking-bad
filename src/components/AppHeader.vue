@@ -22,7 +22,7 @@ export default {
 .header {
     @include flex(row, flex-start, center);
     gap: 1em;
-    padding: 2em 0;
+    padding: 2em 0 1em;
 
     &_logo {
         height: 40px;
