@@ -1,10 +1,12 @@
 <script>
 import { store } from "../store";
 import CharacterCard from './CharacterCard.vue';
+import AppLoader from "./AppLoader.vue";
 export default {
     name: "AppCharacters",
     components: {
         CharacterCard,
+        AppLoader
     },
     data() {
         return {
@@ -15,15 +17,20 @@ export default {
 </script>
 
 <template>
+
     <div class="characters-wrapper">
-        <section class="characters-found">
-            <span> Found 62 characters </span>
-        </section>
-        <section class="characters-list">
-            <!-- insert Card -->
-            <CharacterCard v-for="character in store.characters" :key="character.id" :character="character" />
-        </section>
+        <AppLoader v-if="store.loading" />
+        <div v-else>
+            <section class="characters-found">
+                <span> Found 62 characters </span>
+            </section>
+            <section class="characters-list">
+                <!-- insert Card -->
+                <CharacterCard v-for="character in store.characters" :key="character.char_id" :character="character" />
+            </section>
+        </div>
     </div>
+
 </template>
 
 <style lang="scss" scoped>
@@ -31,7 +38,7 @@ export default {
 @use '../styles/partials/mixins' as *;
 
 .characters-wrapper {
-    background-color: white;
+    background-color: $bg-color-wrapper;
     padding: 1em 1em;
 
     .characters-found {
