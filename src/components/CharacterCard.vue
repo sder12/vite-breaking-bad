@@ -1,22 +1,24 @@
 <script>
 export default {
     name: "CharacterCard",
+    props: {
+        character: Object,
+    }
 }
 </script>
 
 <template>
     <div class="characters-card">
         <div class="card-img">
-            <img src="https://i.pinimg.com/474x/c4/ac/53/c4ac530ffc80b8f0ac19a526ec49bd18.jpg" alt="char">
+            <img :src="character.img">
         </div>
         <div class="card-title">
-            <h3>walter white</h3>
+            <h3>{{ character.name }}</h3>
         </div>
         <div class="card-subtitle">
             <h4>Breaking Bad</h4>
-            <h5>Presumed dead</h5>
+            <h5>{{ character.status }}</h5>
         </div>
-
     </div>
 </template>
 

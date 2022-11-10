@@ -1,9 +1,15 @@
 <script>
+import { store } from "../store";
 import CharacterCard from './CharacterCard.vue';
 export default {
     name: "AppCharacters",
     components: {
         CharacterCard,
+    },
+    data() {
+        return {
+            store
+        }
     }
 }
 </script>
@@ -13,13 +19,9 @@ export default {
         <section class="characters-found">
             <span> Found 62 characters </span>
         </section>
-        <section class="characters-list">
+        <section class="characters-list" v-for="character in store.characters" :key="character.id">
             <!-- insert Card -->
-            <CharacterCard />
-            <CharacterCard />
-            <CharacterCard />
-            <CharacterCard />
-            <CharacterCard />
+            <CharacterCard :character="character" />
         </section>
     </div>
 </template>
@@ -39,8 +41,10 @@ export default {
 
     .characters-list {
         padding: 2em 1em;
-        @include flex(row, space-around, center);
+        @include flex(row, space-around, flex-start);
+        flex-wrap: wrap;
         gap: 1em;
+
         //DEBUG
         // height: 300px;
     }
