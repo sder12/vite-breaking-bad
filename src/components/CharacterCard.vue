@@ -27,9 +27,13 @@ export default {
 @use '../styles/partials/variables' as *;
 
 .characters-card {
-    padding: .5em .5em;
     background-color: $bg-color;
-    width: calc(100% / 5);
+    width: calc(100% / 5 - 20px);
+
+    .card-img {
+        padding: .5em;
+    }
+
 
     .card-title {
         padding: 1em 0;

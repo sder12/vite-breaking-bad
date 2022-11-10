@@ -19,9 +19,9 @@ export default {
         <section class="characters-found">
             <span> Found 62 characters </span>
         </section>
-        <section class="characters-list" v-for="character in store.characters" :key="character.id">
+        <section class="characters-list">
             <!-- insert Card -->
-            <CharacterCard :character="character" />
+            <CharacterCard v-for="character in store.characters" :key="character.id" :character="character" />
         </section>
     </div>
 </template>
@@ -40,10 +40,11 @@ export default {
     }
 
     .characters-list {
-        padding: 2em 1em;
+        padding: 2em 0;
         @include flex(row, space-around, flex-start);
         flex-wrap: wrap;
-        gap: 1em;
+        gap: 20px;
+
 
         //DEBUG
         // height: 300px;
