@@ -1,13 +1,16 @@
 <script>
-
+import AppHeader from './components/AppHeader.vue';
+export default {
+  components: {
+    AppHeader
+  }
+}
 </script>
 
 <template>
   <div class="container">
     <!-- Header + Input -->
-    <header>
-      <h1>Breaking Bad</h1>
-    </header>
+    <AppHeader />
     <!-- Main -->
     <main class="wrapper">
       <section>
@@ -21,5 +24,5 @@
 </template>
 
 <style lang="scss">
-@use "./styles/general.scss";
+@use "./styles/general.scss" as *;
 </style>
