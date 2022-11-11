@@ -20,18 +20,25 @@ export default {
     }
   },
   created() {
-    this.store.loading = true;
-    axios.get(this.store.apiURL)
-      .then((resp) => {
-        this.store.characters = resp.data;
-        //PROXY
-        console.log(this.store.characters);
-        this.store.loading = false;
-      })
+    this.showCategory()
   },
   methods: {
-    selectCategory() {
-      console.log(this.store.selectOption)
+    showCategory() {
+      console.log(this.store.selectOption);
+      this.store.loading = true;
+
+      let urlApi = this.store.apiURL
+      if (this.store.selectOption === "Breaking Bad") {
+        urlApi += "?category=Breaking+Bad"
+      }
+      if (this.store.selectOption === "Better Call Saul") {
+        urlApi += "?category=Better+Call+Saul"
+      }
+      axios.get(urlApi)
+        .then((resp) => {
+          this.store.characters = resp.data;
+          this.store.loading = false;
+        })
     }
   }
 }
@@ -43,7 +50,7 @@ export default {
     <AppHeader />
     <!-- Main -->
     <main class="wrapper">
-      <AppSelect @changeCategory="selectCategory()" />
+      <AppSelect @changeCategory="showCategory()" />
 
       <AppCharacters />
     </main>
