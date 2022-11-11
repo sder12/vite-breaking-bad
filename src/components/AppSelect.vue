@@ -14,8 +14,8 @@ export default {
     <div class="select">
         <select name="series-tv" id="series-tv" v-model="store.selectOption" @change="$emit('changeCategory')">
             <option selected value="">Select category</option>
-            <option value="Breaking Bad">Breaking Bad</option>
-            <option value="Better Call Saul">Better Call Soul</option>
+            <option value="BreakingBad">Breaking Bad</option>
+            <option value="BetterCallSaul">Better Call Soul</option>
         </select>
     </div>
 </template>

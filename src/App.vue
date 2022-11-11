@@ -27,16 +27,30 @@ export default {
       this.store.loading = true;
 
       let urlApi = this.store.apiURL
-      if (this.store.selectOption === "Breaking Bad") {
-        urlApi += "?category=Breaking+Bad"
+
+      //CONCATENAZIONE, AGGIUNGO ?category=...
+      // if (this.store.selectOption === "Breaking Bad") {
+      //   urlApi += "?category=Breaking+Bad"
+      // }
+      // if (this.store.selectOption === "Better Call Saul") {
+      //   urlApi += "?category=Better+Call+Saul"
+      // }
+      let params = {};
+
+      if (this.store.selectOption === "BreakingBad") {
+        params.category = "Breaking Bad";
       }
-      if (this.store.selectOption === "Better Call Saul") {
-        urlApi += "?category=Better+Call+Saul"
+      if (this.store.selectOption === "BetterCallSaul") {
+        params.category = "Better Call Saul";
       }
-      axios.get(urlApi)
+      // console.log(params, "params")
+      axios.get(urlApi, { params: params })
         .then((resp) => {
           this.store.characters = resp.data;
           this.store.loading = false;
+        })
+        .catch(error => {
+          console.log(error)
         })
     }
   }

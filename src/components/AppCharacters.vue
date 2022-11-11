@@ -12,6 +12,11 @@ export default {
         return {
             store,
         }
+    },
+    computed: {
+        charactersNumbers() {
+            return this.store.characters.length;
+        }
     }
 }
 </script>
@@ -22,7 +27,7 @@ export default {
         <AppLoader v-if="store.loading" />
         <div v-else>
             <section class="characters-found">
-                <span> Found {{ store.characters.length }} characters </span>
+                <span> Found {{ charactersNumbers }} characters </span>
             </section>
             <section class="characters-list">
                 <!-- insert Card -->
@@ -51,10 +56,6 @@ export default {
         @include flex(row, space-around, flex-start);
         flex-wrap: wrap;
         gap: 20px;
-
-
-        //DEBUG
-        // height: 300px;
     }
 }
 </style>
