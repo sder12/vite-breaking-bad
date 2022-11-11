@@ -10,7 +10,7 @@ export default {
     },
     data() {
         return {
-            store
+            store,
         }
     }
 }
@@ -22,7 +22,7 @@ export default {
         <AppLoader v-if="store.loading" />
         <div v-else>
             <section class="characters-found">
-                <span> Found 62 characters </span>
+                <span> Found {{ store.characters.length }} characters </span>
             </section>
             <section class="characters-list">
                 <!-- insert Card -->

@@ -24,7 +24,6 @@ export default {
   },
   methods: {
     showCategory() {
-      console.log(this.store.selectOption);
       this.store.loading = true;
 
       let urlApi = this.store.apiURL
