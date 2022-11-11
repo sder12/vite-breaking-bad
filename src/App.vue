@@ -28,6 +28,11 @@ export default {
         console.log(this.store.characters);
         this.store.loading = false;
       })
+  },
+  methods: {
+    selectCategory() {
+      console.log(this.store.selectOption)
+    }
   }
 }
 </script>
@@ -38,7 +43,7 @@ export default {
     <AppHeader />
     <!-- Main -->
     <main class="wrapper">
-      <AppSelect />
+      <AppSelect @changeCategory="selectCategory()" />
 
       <AppCharacters />
     </main>

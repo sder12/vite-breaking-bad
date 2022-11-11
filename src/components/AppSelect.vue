@@ -1,15 +1,21 @@
 <script>
+import { store } from "../store";
 export default {
     name: "AppSelector",
+    data() {
+        return {
+            store
+        }
+    }
 }
 </script>
 
 <template>
     <div class="select">
-        <select name="series-tv" id="series-tv">
-            <option value="">Select category</option>
-            <option value="breaking-bad">Breaking Bad</option>
-            <option value="better-call-soul">Better Call Soul</option>
+        <select name="series-tv" id="series-tv" v-model="store.selectOption" @change="$emit('changeCategory')">
+            <option selected value="">Select category</option>
+            <option value="Breaking Bad">Breaking Bad</option>
+            <option value="Better Call Saul">Better Call Soul</option>
         </select>
     </div>
 </template>
