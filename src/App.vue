@@ -21,7 +21,7 @@ export default {
   },
   created() {
     this.store.loading = true;
-    axios.get("https://www.breakingbadapi.com/api/characters")
+    axios.get(this.store.apiURL)
       .then((resp) => {
         this.store.characters = resp.data;
         //PROXY

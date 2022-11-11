@@ -7,8 +7,7 @@ export default {
 <template>
     <header class="header">
         <div class="header_logo">
-            <img src="https://i.pinimg.com/originals/e4/64/7a/e4647ae03886b3acd7c203dd532d6f2b.png"
-                alt="Logo Breaking Bad">
+            <img src="../assets/logo.png" alt="Logo Breaking Bad">
         </div>
         <div class="header__title">
             <h1>Breaking Bad Api</h1>
@@ -21,12 +20,14 @@ export default {
 
 .header {
     @include flex(row, flex-start, center);
-    gap: 1em;
     padding: 2em 0 1em;
 
     &_logo {
-        height: 40px;
-        width: 40px;
+        width: 10%;
+
+        img {
+            width: 80%;
+        }
     }
 
     h1 {
